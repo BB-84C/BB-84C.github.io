@@ -16,3 +16,9 @@ mkdocs serve
 ```powershell
 mkdocs gh-deploy --force
 ```
+
+## Manage articles
+
+```powershell
+python manage_articles.py
+```
