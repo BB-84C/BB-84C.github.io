@@ -2,23 +2,6 @@
 
 Personal site deployed to GitHub Pages using MkDocs + Material.
 
-## Local preview
+This repository hosts the compiled static site for https://bb-84c.github.io
 
-```powershell
-python -m venv .venv
-.venv\\Scripts\\Activate.ps1
-pip install -r requirements.txt
-mkdocs serve
-```
-
-## Deploy
-
-```powershell
-mkdocs gh-deploy --force
-```
-
-## Manage articles
-
-```powershell
-python manage_articles.py
-```
+Source files are maintained in a private repository.
