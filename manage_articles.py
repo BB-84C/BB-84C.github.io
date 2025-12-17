@@ -194,47 +194,63 @@ def _list() -> int:
 def _interactive(force: bool) -> int:
     DRAFTS_DIR.mkdir(exist_ok=True)
 
-    print("Choose an action:")
-    print("  1) Unpublish (move docs/ -> drafts/)")
-    print("  2) Publish   (move drafts/ -> docs/)")
-    print("  3) List")
-    choice = input("Enter 1/2/3 (or q): ").strip().lower()
-    if choice in {"q", "quit", "exit"}:
-        return 0
-    if choice == "3":
-        return _list()
+    while True:
+        print("Choose an action:")
+        print("  1) Unpublish (move docs/ -> drafts/)")
+        print("  2) Publish   (move drafts/ -> docs/)")
+        print("  3) List")
+        choice = input("Enter 1/2/3 (or q): ").strip().lower()
+        if choice in {"q", "quit", "exit"}:
+            return 0
 
-    if choice == "1":
-        src_root, dst_root = DOCS_DIR, DRAFTS_DIR
-        src_items = _articles_in_docs()
-        label = "Unpublish"
-    elif choice == "2":
-        src_root, dst_root = DRAFTS_DIR, DOCS_DIR
-        src_items = _articles_in_drafts()
-        label = "Publish"
-    else:
-        print("Invalid choice.", file=sys.stderr)
-        return 2
+        if choice == "3":
+            _list()
+            print()
+            continue
 
-    if not src_items:
-        print(f"No articles available to {label.lower()}.")
-        return 0
+        if choice == "1":
+            src_root, dst_root = DOCS_DIR, DRAFTS_DIR
+            src_items = _articles_in_docs()
+            label = "Unpublish"
+        elif choice == "2":
+            src_root, dst_root = DRAFTS_DIR, DOCS_DIR
+            src_items = _articles_in_drafts()
+            label = "Publish"
+        else:
+            print("Invalid choice.", file=sys.stderr)
+            print()
+            continue
 
-    display = [a.relpath.as_posix() for a in src_items]
-    try:
-        picked = _prompt_indices(display, "Select items (e.g. 1 2 5-7), Enter to cancel: ")
-    except ValueError as e:
-        print(str(e), file=sys.stderr)
-        return 2
+        if not src_items:
+            print(f"No articles available to {label.lower()}.")
+            print()
+            continue
 
-    for idx in picked:
-        article = src_items[idx - 1]
-        _move_article(src_root, dst_root, article.relpath, force=force)
-        print(f"{label}ed: {article.relpath.as_posix()}")
+        display = [a.relpath.as_posix() for a in src_items]
+        try:
+            picked = _prompt_indices(
+                display,
+                "Select items (e.g. 1,2,4,5,7 or 1-3), Enter to cancel: ",
+            )
+        except SystemExit:
+            return 0
+        except (ValueError, FileExistsError, IsADirectoryError) as e:
+            print(str(e), file=sys.stderr)
+            print()
+            continue
 
-    _update_mkdocs_nav()
-    print("Updated mkdocs nav.")
-    return 0
+        for idx in picked:
+            article = src_items[idx - 1]
+            try:
+                _move_article(src_root, dst_root, article.relpath, force=force)
+            except FileExistsError as e:
+                print(str(e), file=sys.stderr)
+                print("Tip: re-run with --force to overwrite.", file=sys.stderr)
+                continue
+            print(f"{label}ed: {article.relpath.as_posix()}")
+
+        _update_mkdocs_nav()
+        print("Updated mkdocs nav.\n")
 
 
 def main(argv: list[str]) -> int:
@@ -252,4 +268,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
-
