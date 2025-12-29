@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned - BB84 Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exploring the Automation Solution in Experimental Science in 2025 \u2014 This Is What I Learned";
+        var mkdocs_page_input_path = "Agent\\Ending Year 2025, Done and Thought.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> BB84 Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Agent</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#from-daa-to-spm-agent-why-my-first-agent-wasnt-really-an-agent">From DAA to SPM Agent: Why My First “Agent” Wasn’t Really an Agent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-the-spm-agent-changed-everything">Why the SPM Agent Changed Everything</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structure-vs-emergence-a-false-dichotomy">Structure vs Emergence: A False Dichotomy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#context-engineering-the-real-agent-problem">Context Engineering: The Real Agent Problem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coala-memento-case-based-reasoning">CoALA, Memento, Case-Based Reasoning</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#agents-sdks-and-the-question-of-survival">Agents, SDKs, and the Question of Survival</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#where-my-agent-goes-next">Where My Agent Goes Next</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LLM</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LLM/Why%20Should%20LLM%20Learn/">Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">BB84 Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Agent</li>
+      <li class="breadcrumb-item active">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="exploring-the-automation-solution-in-experimental-science-in-2025-this-is-what-i-learned">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</h1>
+<p><em>Posted on Dec 29, 2025.</em></p>
+<p>Over the last few days of 2025, I finally built my first agent that I am willing to call a <em>real</em> agent. It controls an SPM system in a real experimental environment, runs without human supervision, observes the world it acts on, and makes decisions based on what actually happens rather than what it assumes should have happened. <a href="https://youtu.be/S52p4ikiOVM">Demo Here.</a> This blog is not a victory lap. It is a retrospective on how my understanding of automation in experimental science evolved—from early, heavily structured LLM workflows, to a genuine agent operating in an open physical environment—and what this journey taught me about agents, structure, context, and the future of AI-driven experimental automation.</p>
+<p>What follows is not a tutorial. It is an attempt to articulate a mental model that survived contact with reality.</p>
+<hr />
+<h2 id="from-daa-to-spm-agent-why-my-first-agent-wasnt-really-an-agent">From DAA to SPM Agent: Why My First “Agent” Wasn’t Really an Agent</h2>
+<p>A year ago, I was building what I called a <em>Data Analysis Agent (DAA)</em>. In hindsight, the name was generous. It was, in practice, a structured LLM workflow executor: a TaskGraph, a deterministic execution engine, carefully staged tool calls, and aggressive guardrails against hallucination. <a href="https://youtu.be/xM7kfvhA2P4">Demo Here.</a> // <a href="https://github.com/BB-84C/DataAnalysisAgent">Repo Here.</a> Although the project started April 2025, the idea was conceived way back to 2022, the late GPT-3 era. At the time—late GPT-3 era—this was not overengineering. Models hallucinated APIs, fabricated classes, and produced code that looked plausible but could not run. Even when it came to the GPT-4 era, we are still shadowed by these nightmares. Structure was not a design preference; it was a survival mechanism.</p>
+<p>Looking back now, some of those designs feel almost comical, like an anachronism. But that feeling is misleading. As I looked back to the time I worked on DAA, a funny scene came up to my mind: a stone-aged human asking a modern human, “If you don’t go out to hunt today, how do you avoid starving tomorrow?”. DAA existed because, at that time, it was the only rational way to get anything reliable out of an LLM, <em>an early human worrying about hunting is not stupid—hunting was the only way to stay alive</em>.The fact that GPT-4 and later models made many of those constraints unnecessary does not retroactively invalidate the logic behind them.</p>
+<p>What DAA lacked was not sophistication, but exposure. It lived in a closed world: files, functions, schemas, deterministic outputs. It never had to confront a system that could refuse, lag, desynchronize, or silently fail. And because of that, it never forced me to answer the hardest question: <em>what does it mean for an agent to know whether it is actually doing the right thing?</em></p>
+<p><img alt="alt text" src="../image-4.png" />
+<em>A complicated, static workflow has to be designed pre executing the data analysis.</em></p>
+<hr />
+<h2 id="why-the-spm-agent-changed-everything">Why the SPM Agent Changed Everything</h2>
+<p>The SPM agent answered that question by force.</p>
+<p>Unlike DAA, this agent operates in an open, real environment. The UI can change. The instrument can stall. A scan may start, but not actually start. A parameter may be set, but not applied. Nothing is guaranteed unless it is observed. This single shift changed everything about how I thought about agents.</p>
+<p>The most important realization was simple but uncomfortable:</p>
+<blockquote>
+<p><strong>Agent reliability does not come from structure itself, but from how much the orchestration respects real-world state.</strong></p>
+</blockquote>
+<p>Most of the classic “agents are brittle” arguments assume an agent that acts optimistically—one that executes a plan and <em>assumes</em> success unless told otherwise. My SPM agent survived because it did the opposite, it deeply roots in the ReAct philosophy. Every action was followed by observation. Every transition was gated on actual UI state. When something was unclear, the agent waited. When state contradicted intent, the agent stopped. The system did not become reliable because it had fewer steps, but because it refused to advance without evidence.</p>
+<p><img alt="alt text" src="../image-1.png" />
+<em>The screenshot of SPM Agent running a bias dependent topography scanning query.</em></p>
+<p><img alt="alt text" src="../image-2.png" />
+<em>The screenshot of SPM Agent plan for the bias dependent topography scanning query.</em></p>
+<p>Ironically, the agent did run into all the problems people warn about: drifting behavior, misinterpreted state, partial failure. What fixed these issues was not abandoning agents in favor of workflows, but correcting the orchestration itself. The failure mode was not “LLMs are unreliable,” but “the control loop was poorly specified.”</p>
+<p><img alt="alt text" src="../image.png" />
+<em>The bias setting wasn't successful due to unknown reason, but the agent corrected itself from the drifting, which is unexpected by the plan.</em></p>
+<p>Once the orchestration was rebuilt with explicit observe–decide–act discipline, the system stabilized. And it did so in a way that felt, for lack of a better word, <em>rational</em>.</p>
+<hr />
+<h2 id="structure-vs-emergence-a-false-dichotomy">Structure vs Emergence: A False Dichotomy</h2>
+<p>It would be tempting to tell a clean story here: early models needed structure, modern models rely on emergence, therefore structure is obsolete. This story is wrong.</p>
+<p>Anthropic’s recent work—especially the <em>Skills</em> paradigm came out Oct 2025, and emphasized at AWS re:Invent 2025—makes this very clear. Skills were introduced in an era of extremely capable models (GPT-5.2, Gemini 3 Pro, Opus 4.5) with massive context windows, yet they were widely praised as elegant and forward-looking. No one seriously argued that they were unnecessary because “the model is smart enough now.”</p>
+<p>Why? Because Skills do not exist to compensate for weak models. They exist to solve a problem that does not go away with scale: <strong>attention is finite, context is expensive, and not everything should be visible at all times</strong>.</p>
+<p>This also resonated with an idea I had been circling around for some time, when I was designing DAA, even if I never gave it a formal name. The question was never how to constrain intelligence, but how to route it—how to decide which tools, knowledge, and affordances should be relevant in this moment. Stronger models do not make this question disappear; they amplify it. When everything becomes possible, the harder problem is deciding what should be possible at all.</p>
+<p>In that sense, some of the most important ideas in DAA were not outdated at all. They simply belonged to a different layer of the system.</p>
+<hr />
+<h2 id="context-engineering-the-real-agent-problem">Context Engineering: The Real Agent Problem</h2>
+<p>One of the most valuable lessons from Anthropic’s report is the reframing of “prompt engineering” into <strong>context engineering</strong>. This resonates deeply with my experience building the SPM agent.</p>
+<p>The hardest part was never writing a good prompt. It was deciding:</p>
+<ul>
+<li>What state should be made explicit?</li>
+<li>What history should be retained, summarized, or discarded?</li>
+<li>What information must be fresh, and what can be cached?</li>
+<li>When should the agent stop and compress its own experience?</li>
+</ul>
+<p>In the SPM agent, the most meaningful progress came from being intentional about how context was presented to the model. Instead of exposing the agent to all available control information and expecting it to reason its way to the right focus, I designed the system so that each action explicitly defined where is possible to be subjected by that action. By linking actions to their most relevant consequences, the agent was guided to attend only to information that mattered for validating its own behavior. This form of action-linked observation is a concrete example of context engineering: not adding more information, but shaping which information becomes relevant at each step.</p>
+<p><img alt="alt text" src="../image-5.png" />
+<em>One of the control panels from the SPM control software.</em></p>
+<p>This insight scales directly to more ambitious systems. Long-horizon agents require compaction. Case-based systems require retrieval that can fail and recover. Real-world agents require state that is trustworthy, not just verbose. None of this is solved by larger context windows or a super-smart LLM alone.</p>
+<hr />
+<h2 id="coala-memento-case-based-reasoning">CoALA, Memento, Case-Based Reasoning</h2>
+<p>My long-term interest has never been in making agents that <em>sound</em> smarter. It has been in making agents that <em>learn from experience</em> in a way that respects reality.</p>
+<p>This is why <a href="https://arxiv.org/pdf/2309.02427">CoALA</a>: cognitive architectures for LLM agent caught my eyes, and why <a href="https://arxiv.org/pdf/2508.16153">Memento</a> and case-based reasoning (CBR) feel more promising than brute-force fine-tuning. Fine-tuning optimizes distributional behavior. CBR preserves situational memory. One compresses; the other remembers <em>why</em> something worked or failed.</p>
+<p>In experimental science, edge cases are not noise—they are the data. A system that forgets failure modes is not intelligent; it is dangerous. A case-based approach allows an agent to say, in effect: <em>I have been in something like this situation before, and here is what happened</em>. That is far closer to how human experimentalists actually operate.</p>
+<p>This is also where the boundary between “knowledge” and “skills” becomes blurry. Take bias-dependent topography scanning as an example. At the knowledge level, this might be described as a simple experimental plan: perform a topography scan at each bias value, move through a predefined bias list, and relate the choice of bias points to the material’s electronic properties. But in practice, making this work reliably also requires skills that are rarely written down—such as deliberately initiating a short scan to get the piezo moving before restarting the actual measurement, in order to reduce uncalibrated drift between scans. This distinction matters because such skills are not abstract rules but accumulated experience. What ultimately defines intelligence here is not whether knowledge and skills are cleanly separated, but whether past experience can be retrieved, placed into context, and executed at the right moment.</p>
+<hr />
+<h2 id="agents-sdks-and-the-question-of-survival">Agents, SDKs, and the Question of Survival</h2>
+<p>At this point, it is hard to avoid a broader question. As agent frameworks mature, major companies are rapidly lowering the technical barrier to building agents. With ready-made SDKs: standardized development kits, what once required months of careful engineering can now be assembled in days. On the surface, this feels empowering. At the same time, it subtly changes what it means to “build an agent” in the first place.</p>
+<p>What becomes clear, especially after working on an agent that interacts with real experimental systems, is that the hardest part was never wiring tools together. The real difficulty lies in making the system behave responsibly in an open, physical environment—knowing when to proceed, when to stop, and how to recover when reality does not cooperate. SDKs can make it easier to construct agent-like software, but they do not make it easier to bear the consequences of incorrect decisions, nor do they accumulate the hard-earned experience that comes from repeated interaction with real experiments.</p>
+<p>Framed this way, the question gradually shifts. It is no longer about whether one can build an agent faster than everyone else, but about what kind of automation capability is actually being delivered, and what degree of responsibility comes with it. Once I started thinking in these terms, the competitive landscape looked very different. Tooling became shared infrastructure, while experience, judgment, and accountability emerged as the real differentiators.</p>
+<hr />
+<h2 id="where-my-agent-goes-next">Where My Agent Goes Next</h2>
+<p>The SPM agent is not the end goal. It is a proof of contact with reality. What comes next is less about making the agent “smarter” (in the superficial layer),  and more about refining how it interacts with the world and how context is constructed around that interaction. The real challenge is to scale this system without drowning the model in information—by carefully controlling what the agent attends to, when it should act, and when it should wait.</p>
+<p>Concretely, this points toward stronger context engineering and <strong>structured attention coordination</strong>. As the agent’s capabilities expand, it becomes increasingly important to decide which parts of the system state, historical context, and operational knowledge should be exposed at each step, and which should remain latent. Rather than hard-coding ever larger workflows, the focus shifts to building a coordination layer that routes attention, selects relevant capabilities, and enforces disciplined interaction with real experimental systems.</p>
+<p>That might sound too much information, but in fact it is just one rule: <strong>by being forced to respect the world these agents act in.</strong></p>
+<p>Many posts today are about unifying agent frameworks and standardizing interfaces. That work is necessary. But what I am more interested in is something orthogonal: <strong>how agents acquire judgment through interaction with reality</strong>.</p>
+<p>That question does not go away with better models. If anything, it becomes more urgent.</p>
+<p>And for now, that is the most valuable thing "exploring the automation solution in experimental science in 2025" taught me.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../LLM/Why%20Should%20LLM%20Learn/" class="btn btn-neutral float-right" title="Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../LLM/Why%20Should%20LLM%20Learn/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
