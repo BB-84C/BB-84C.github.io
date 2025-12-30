@@ -45,6 +45,8 @@
               </ul>
               <p class="caption"><span class="caption-text">Agent</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../A%20Test%20on%20Compression%20of%20Agent%20Memory/">Memory Compression That Preserves Action</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#from-daa-to-spm-agent-why-my-first-agent-wasnt-really-an-agent">From DAA to SPM Agent: Why My First “Agent” Wasn’t Really an Agent</a>
@@ -106,7 +108,7 @@
 <p>Earlier this year, I was building what I called a <em>Data Analysis Agent (DAA)</em>. In hindsight, the name was generous. It was, in practice, a structured LLM workflow executor: a TaskGraph, a deterministic execution engine, carefully staged tool calls, and aggressive guardrails against hallucination. <a href="https://youtu.be/xM7kfvhA2P4">Demo Here.</a> // <a href="https://github.com/BB-84C/DataAnalysisAgent">Repo Here.</a> Although the project started April 2025, the idea was conceived way back to 2022, the late GPT-3 era. At the time—late GPT-3 era—this was not overengineering. Models hallucinated APIs, fabricated classes, and produced code that looked plausible but could not run. Even when it came to the GPT-4 era, we are still shadowed by these nightmares. Structure was not a design preference; it was a survival mechanism.</p>
 <p>Looking back now, some of those designs feel almost comical, like an anachronism. But that feeling is misleading. As I looked back to the time I worked on DAA, a funny scene came up to my mind: a stone-aged human asking a modern human, “If you don’t go out to hunt today, how do you avoid starving tomorrow?”. DAA existed because, at that time, it was the only rational way to get anything reliable out of an LLM, <em>an early human worrying about hunting is not stupid—hunting was the only way to stay alive</em>. The fact that GPT-4 and later models made many of those constraints unnecessary does not retroactively invalidate the logic behind them.</p>
 <p>What DAA lacked was not sophistication, but exposure. It lived in a closed world: files, functions, schemas, deterministic outputs. It never had to confront a system that could refuse, lag, desynchronize, or silently fail. And because of that, it never forced me to answer the hardest question: <em>what does it mean for an agent to know whether it is actually doing the right thing?</em></p>
-<p><img alt="alt text" src="../image-4.png" />
+<p><img alt="alt text" src="../assest/EndYear2025/image-4.png" />
 <em>A complicated, static workflow has to be designed pre executing the data analysis.</em></p>
 <hr />
 <h2 id="why-the-spm-agent-changed-everything">Why the SPM Agent Changed Everything</h2>
@@ -117,12 +119,12 @@
 <p><strong>Agent reliability does not come from structure itself, but from how much the orchestration respects real-world state.</strong></p>
 </blockquote>
 <p>Most of the classic “agents are brittle” arguments assume an agent that acts optimistically—one that executes a plan and <em>assumes</em> success unless told otherwise. My SPM agent survived because it did the opposite, it deeply roots in the ReAct philosophy. Every action was followed by observation. Every transition was gated on actual UI state. When something was unclear, the agent waited. When state contradicted intent, the agent stopped. The system did not become reliable because it had fewer steps, but because it refused to advance without evidence.</p>
-<p><img alt="alt text" src="../image-1.png" />
+<p><img alt="alt text" src="../assest/EndYear2025/image-1.png" />
 <em>The screenshot of SPM Agent running a bias dependent topography scanning query.</em></p>
-<p><img alt="alt text" src="../image-2.png" />
+<p><img alt="alt text" src="../assest/EndYear2025/image-2.png" />
 <em>The screenshot of SPM Agent plan for the bias dependent topography scanning query.</em></p>
 <p>Ironically, the agent did run into all the problems people warn about: drifting behavior, misinterpreted state, partial failure. What fixed these issues was not abandoning agents in favor of workflows, but correcting the orchestration itself. The failure mode was not “LLMs are unreliable,” but “the control loop was poorly specified.”</p>
-<p><img alt="alt text" src="../image.png" />
+<p><img alt="alt text" src="../assest/EndYear2025/image.png" />
 <em>The bias setting wasn't successful due to unknown reason, but the agent corrected itself from the drifting, which is unexpected by the plan.</em></p>
 <p>Once the orchestration was rebuilt with explicit observe–decide–act discipline, the system stabilized. And it did so in a way that felt, for lack of a better word, <em>rational</em>.</p>
 <hr />
@@ -143,7 +145,7 @@
 <li>When should the agent stop and compress its own experience?</li>
 </ul>
 <p>In the SPM agent, the most meaningful progress came from being intentional about how context was presented to the model. Instead of exposing the agent to all available control information and expecting it to reason its way to the right focus, I designed the system so that each action explicitly defined where is possible to be subjected by that action. By linking actions to their most relevant consequences, the agent was guided to attend only to information that mattered for validating its own behavior. This form of action-linked observation is a concrete example of context engineering: not adding more information, but shaping which information becomes relevant at each step.</p>
-<p><img alt="alt text" src="../image-5.png" />
+<p><img alt="alt text" src="../assest/EndYear2025/image-5.png" />
 <em>One of the control panels from the SPM control software.</em></p>
 <p>This insight scales directly to more ambitious systems. Long-horizon agents require compaction. Case-based systems require retrieval that can fail and recover. Real-world agents require state that is trustworthy, not just verbose. None of this is solved by larger context windows or a super-smart LLM alone.</p>
 <hr />
@@ -169,7 +171,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../A%20Test%20on%20Compression%20of%20Agent%20Memory/" class="btn btn-neutral float-left" title="Memory Compression That Preserves Action"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../../LLM/Why%20Should%20LLM%20Learn/" class="btn btn-neutral float-right" title="Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -193,7 +195,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../A%20Test%20on%20Compression%20of%20Agent%20Memory/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../../LLM/Why%20Should%20LLM%20Learn/" style="color: #fcfcfc">Next &raquo;</a></span>
