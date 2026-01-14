@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Measured, Not Predicted: Rethinking AI for Science - BB84 Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Measured, Not Predicted: Rethinking AI for Science";
+        var mkdocs_page_input_path = "LLM\\Measured, Not Predicted.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> BB84 Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Agent</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Agent/A%20Test%20on%20Compression%20of%20Agent%20Memory/">Memory Compression That Preserves Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Agent/Ending%20Year%202025%2C%20Done%20and%20Thought/">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LLM</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Measured, Not Predicted: Rethinking AI for Science</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-question-we-actually-care-about">The Question We Actually Care About</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-detour-llms-and-classical-mechanics-as-state-machines">A Detour: LLMs and Classical Mechanics as State Machines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#semantic-state-space-and-potentials-in-llms">Semantic State Space and Potentials in LLMs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#classical-mechanics-phase-space-and-least-action">Classical Mechanics: Phase Space and Least Action</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#however-the-world-is-measured-not-predicted">However, The World Is Measured, Not Predicted</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-prediction-is-fundamentally-limited">Why Prediction Is Fundamentally Limited</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exploration-not-extrapolation">Exploration, Not Extrapolation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-apparent-paradox-what-belongs-in-the-models-phase-space">The Apparent Paradox: What Belongs in the Model’s Phase Space</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-you-want-your-ai-for-science">How Do You Want Your AI for Science?</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Why%20Should%20LLM%20Learn/">Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">BB84 Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">LLM</li>
+      <li class="breadcrumb-item active">Measured, Not Predicted: Rethinking AI for Science</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="measured-not-predicted-rethinking-ai-for-science">Measured, Not Predicted: Rethinking AI for Science</h1>
+<p><em>Posted on Dec 30, 2025</em></p>
+<p>I recently came across a paper titled <em>Detailed balance in large language model-driven agents</em> <em>(arXiv:2512.10047)</em>. At first glance, it looks like a technical curiosity: the authors experimentally probe the transition probabilities between states generated by large language models (LLMs) and discover that, at a coarse-grained level, these transitions satisfy <strong>detailed balance</strong>.</p>
+<p>In statistical physics, detailed balance implies that there exists an effective potential (or energy) function <span class="arithmatex">\(E(s)\)</span> over states <span class="arithmatex">\(s\)</span>, such that</p>
+<div class="arithmatex">\[
+ e^{-E(s)} \approx P(s' \to s).
+\]</div>
+<p>Translated into plain language: although LLM generation looks stochastic and heuristic-driven, its long-time behavior resembles motion on a landscape shaped by a potential. The system drifts toward lower-energy (more stable, more coherent) semantic states.</p>
+<p>The authors go further and make a strong claim: this phenomenon appears <strong>independent of specific model architectures or prompt templates</strong>, hinting at a macroscopic law governing LLM-driven agents rather than an implementation detail.</p>
+<p>This is intriguing—but it also raises a much deeper question.</p>
+<hr />
+<h2 id="the-question-we-actually-care-about">The Question We Actually Care About</h2>
+<p>Before the reader’s patience runs out, let me jump directly to the real issue:</p>
+<blockquote>
+<p><strong>What kind of AI do we actually need for AI for Science?</strong></p>
+</blockquote>
+<p>Not a better chatbot. Not a more accurate regressor. But an AI system that can genuinely participate in scientific discovery.</p>
+<p>The rest of this essay is an attempt to use the detailed-balance observation as a stepping stone toward answering that question.</p>
+<hr />
+<h2 id="a-detour-llms-and-classical-mechanics-as-state-machines">A Detour: LLMs and Classical Mechanics as State Machines</h2>
+<p><em>If the following section feels too technical, feel free to skip to the next one. Nothing essential is lost.</em></p>
+<h3 id="semantic-state-space-and-potentials-in-llms">Semantic State Space and Potentials in LLMs</h3>
+<p>An LLM can be viewed as a stochastic state machine evolving in a high-dimensional <strong>semantic state space</strong>. At each step, given a current hidden state <span class="arithmatex">\(s_t\)</span>, the model samples the next token, producing a new state <span class="arithmatex">\(s_{t+1}\)</span>.</p>
+<p>Empirically, this evolution often behaves as if guided by an implicit potential function <span class="arithmatex">\(E(s)\)</span>:</p>
+<ul>
+<li>states with internal contradiction or semantic incoherence sit at higher “energy,”</li>
+<li>states that are self-consistent, well-structured, and contextually appropriate sit lower.</li>
+</ul>
+<p>Attention mechanisms act as transport operators on this landscape, redistributing probability mass and effectively shaping local gradients in semantic space.</p>
+<h3 id="classical-mechanics-phase-space-and-least-action">Classical Mechanics: Phase Space and Least Action</h3>
+<p>In classical mechanics, the state of a system is described by coordinates <span class="arithmatex">\(q\)</span> and momenta <span class="arithmatex">\(p\)</span>, forming a <strong>phase space</strong>. Dynamics are governed by the principle of least action:</p>
+<div class="arithmatex">\[
+S = \int L(q, \dot{q}, t) , dt,
+\]</div>
+<p>where <span class="arithmatex">\(L\)</span> is the Lagrangian. Physical trajectories are those that extremize <span class="arithmatex">\(S\)</span>.</p>
+<p>A familiar illustration is the <strong>Brachistochrone problem</strong>: given two points in a gravitational field, the path of fastest descent is not a straight line but a cycloid. The system does not “predict” the endpoint; it follows the path that minimizes action under constraints.</p>
+<p>The parallel should already feel uncomfortable—in a productive way.</p>
+<p>With this analogy in mind, the detailed-balance result becomes less mysterious. LLM generation behaves like a stochastic dynamical system drifting on an effective energy landscape, much like:</p>
+<ul>
+<li>Langevin dynamics in statistical mechanics,</li>
+<li>or gradient flow with noise in an energy landscape.</li>
+</ul>
+<p>Traditional machine learning models fit into this picture as well:</p>
+<ul>
+<li>During <strong>training</strong>, almost all models minimize a loss function, i.e., an action in parameter space.</li>
+<li>During <strong>inference</strong>, however, most classical models (e.g., CNNs) collapse into a single feed-forward map, with no observable internal dynamics.</li>
+</ul>
+<p>LLMs are different because their inference process <em>is itself a dynamical trajectory</em>.</p>
+<p>So far, this sounds like a victory for prediction-based worldviews. But this is exactly where the trap lies.</p>
+<hr />
+<h2 id="however-the-world-is-measured-not-predicted">However, The World Is Measured, Not Predicted</h2>
+<p>This statement sounds trivial, and almost tautological:</p>
+<p>But yet, this sentence cuts directly against the grain of most AI-for-Science narratives.</p>
+<h3 id="why-prediction-is-fundamentally-limited">Why Prediction Is Fundamentally Limited</h3>
+<p>Imagine training a model using Newtonian mechanics and classical trajectories, then asking it to solve a chaotic three-body problem. I have no doubt it could produce an extraordinarily accurate numerical solution.</p>
+<p>But such a model will <em>never</em> discover relativity or quantum mechanics.</p>
+<p>Why?</p>
+<p>Because those degrees of freedom are <strong>absent from its phase space</strong>. The action it minimizes lives entirely within a classical manifold:</p>
+<div class="arithmatex">\[
+S_{\text{classical}} = \int L_{\text{Newton}}(q, \dot{q}) , dt.
+\]</div>
+<p>No amount of optimization inside this space will generate states corresponding to quantum superposition or relativistic time dilation. The model can only become better at being wrong.</p>
+<h3 id="exploration-not-extrapolation">Exploration, Not Extrapolation</h3>
+<p>Scientific discovery does not proceed by extrapolating within a fixed state space. It proceeds by <em>colliding with the boundaries of that space</em>.</p>
+<p>One might say that science advances like a blind person mapping a room: guided by local principles (such as least action), but fundamentally reliant on <strong>contact, resistance, and measurement</strong>.</p>
+<p>This is precisely why the detailed-balance observation actually supports—not undermines—this position. The existence of a potential means the system is stable <em>within</em> its accessible space, but says nothing about whether that space is complete.</p>
+<hr />
+<h2 id="the-apparent-paradox-what-belongs-in-the-models-phase-space">The Apparent Paradox: What Belongs in the Model’s Phase Space</h2>
+<p>At this point, a contradiction seems unavoidable:</p>
+<ul>
+<li>LLMs (and any models) operate in a <strong>pretrained, fixed state space</strong>.</li>
+<li>Science requires <strong>discovering new dimensions of reality</strong>.</li>
+</ul>
+<p>How can both be true?</p>
+<p>The resolution is simple but subtle: <strong>the model’s state space is not the world’s state space</strong>.</p>
+<p>The model does not need to represent all physical phases. It needs to represent <em>how to act when it does not know what phase it is in</em>.</p>
+<p>This leads to the real question:</p>
+<blockquote>
+<p><strong>What should we put into the model’s state space?</strong></p>
+</blockquote>
+<p>The wrong answer is: <em>all known physical phases</em>.</p>
+<p>Encoding every known order parameter, symmetry class, and Hamiltonian assumption hard-codes today’s ignorance into tomorrow’s machines.</p>
+<p>A better answer is: <strong>human methodological principles</strong>.</p>
+<p>Humans have practiced science for millennia using a remarkably stable loop:</p>
+<ul>
+<li>act,</li>
+<li>observe,</li>
+<li>reflect,</li>
+<li>revise.</li>
+</ul>
+<p>This was true in Aristotle’s time, and it is true today.</p>
+<p>Consider an analogy: if you show a donut to a model that has only ever seen “spherical vacuum chickens,” it may output “spherical cow” or “cubical pig,” but it will never output a donut. The topology itself is alien to its representation.</p>
+<p>A good scientific agent should not force the donut into an existing category. It should instead <em>change what it does next</em>.</p>
+<p>This is the role of action–observation loops such as ReAct: not as a prompt trick, but as a <strong>semantic escape hatch</strong>. When explanation fails, the system flows back into a space of actions and measurements rather than hallucinated understanding.</p>
+<hr />
+<h2 id="how-do-you-want-your-ai-for-science">How Do You Want Your AI for Science?</h2>
+<p>We can now propose a concrete criterion:</p>
+<blockquote>
+<p>A good AI-for-Science system is not one that predicts well, but one that remains stable when prediction fails.</p>
+</blockquote>
+<p>When encountering an irreducible anomaly, it should:</p>
+<ul>
+<li>avoid divergence,</li>
+<li>avoid forced pattern matching,</li>
+<li>avoid minimizing loss at all costs,</li>
+<li>and instead re-enter an action–observation regime.</li>
+</ul>
+<p>In thermodynamic terms, this is not about reaching the lowest-energy state, but about <strong>choosing the correct basin of dynamics when the current effective theory breaks down</strong>.</p>
+<p>LLMs reveal something profound: intelligence can emerge from motion on a potential landscape. But science does not emerge from better potentials alone.</p>
+<p>It emerges when a system knows <strong>when to stop explaining and start measuring</strong>.</p>
+<p>If AI is to contribute meaningfully to science, its internal state space should not attempt to mirror the universe. It should mirror the way humans remain epistemically honest in the face of the unknown.</p>
+<p>Prediction lives inside a map.</p>
+<p>Discovery begins where the map ends.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Agent/Ending%20Year%202025%2C%20Done%20and%20Thought/" class="btn btn-neutral float-left" title="Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Why%20Should%20LLM%20Learn/" class="btn btn-neutral float-right" title="Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Agent/Ending%20Year%202025%2C%20Done%20and%20Thought/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Why%20Should%20LLM%20Learn/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/mathjax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
