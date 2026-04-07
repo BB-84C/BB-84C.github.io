@@ -1,143 +1,80 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
-      <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>BB84 Notes</title>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Home";
-        var mkdocs_page_input_path = "index.md";
-        var mkdocs_page_url = null;
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BB84 personal site"><title>BB84 // Home</title><template id="theme-boot-config-9e65a12b-4f3d-4f10-b870-316149465bcf" data-theme-boot-config>{&quot;allowedThemes&quot;:[&quot;commonwealth&quot;,&quot;capital&quot;,&quot;mojave&quot;],&quot;defaultThemeKey&quot;:&quot;mojave&quot;,&quot;themeStorageKey&quot;:&quot;bb84-theme&quot;}</template><script>
+  for (const configNode of document.querySelectorAll("template[data-theme-boot-config]")) {
+    const config = JSON.parse(document.getElementById(configNode.id)?.content.textContent ?? "{}");
+    const allowedThemes = Array.isArray(config.allowedThemes) ? config.allowedThemes : [];
+    const defaultThemeKey = typeof config.defaultThemeKey === "string" ? config.defaultThemeKey : "";
+    const themeStorageKey = typeof config.themeStorageKey === "string" ? config.themeStorageKey : "";
 
-<body class="wy-body-for-nav" role="document">
+    let nextTheme = defaultThemeKey;
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> BB84 Notes
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    try {
+      const storedTheme = globalThis.localStorage?.getItem(themeStorageKey);
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
-    <ul class="current">
-    </ul>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Agent</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="Agent/A%20Test%20on%20Compression%20of%20Agent%20Memory/">Memory Compression That Preserves Action</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="Agent/Ending%20Year%202025%2C%20Done%20and%20Thought/">Exploring the Automation Solution in Experimental Science in 2025 — This Is What I Learned</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">LLM</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="LLM/Measured%2C%20Not%20Predicted/">Measured, Not Predicted: Rethinking AI for Science</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="LLM/Why%20Should%20LLM%20Learn/">Why Low-Sample, High-Quality Learning Is the Key to Real AI-for-Science</a>
-                  </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
-                </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
+      if (allowedThemes.includes(storedTheme)) {
+        nextTheme = storedTheme;
+      }
+    } catch {
+      nextTheme = defaultThemeKey;
+    }
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">BB84 Notes</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Home</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <h1 id="bb84s-notes-on-llmagentsciences">BB84's Notes on LLM/Agent/Sciences</h1>
-<p><strong>I am a physicist work with scanning tunneling microscope (STM) and novel quantum materials. I use LLM to automate my research, from experimental data taking to data analysis. Here I share my personal notes/thought on LLMs, agent architectures, and how AI can help in sciences automation.</strong></p>
-<p>If you want to contact me: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#117;&#115;&#116;&#112;&#104;&#121;&#115;&#105;&#99;&#115;&#99;&#104;&#101;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#104;&#117;&#115;&#116;&#112;&#104;&#121;&#115;&#105;&#99;&#115;&#99;&#104;&#101;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="Agent/A%20Test%20on%20Compression%20of%20Agent%20Memory/" class="btn btn-neutral float-right" title="Memory Compression That Preserves Action">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-    
-      <span><a href="Agent/A%20Test%20on%20Compression%20of%20Agent%20Memory/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
-</div>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = ".";</script>
-    <script src="js/theme_extra.js"></script>
-    <script src="js/theme.js"></script>
-      <script src="javascripts/mathjax.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script src="search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
-</html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2026-01-14 02:37:09.557447+00:00
--->
+    if (nextTheme) {
+      document.documentElement.dataset.theme = nextTheme;
+    }
+  }
+</script><link rel="stylesheet" href="/_astro/index.BMm3Dc1L.css">
+<style>.markdown-text[data-astro-cid-4hsbdvgl] *:first-child{margin-top:0}.markdown-text[data-astro-cid-4hsbdvgl] *:last-child{margin-bottom:0}.markdown-text[data-astro-cid-4hsbdvgl] p,.markdown-text[data-astro-cid-4hsbdvgl] ul,.markdown-text[data-astro-cid-4hsbdvgl] ol{margin:0}.markdown-text[data-astro-cid-4hsbdvgl] ul,.markdown-text[data-astro-cid-4hsbdvgl] ol{padding-left:1.25rem}.markdown-text[data-astro-cid-4hsbdvgl] li+li,.markdown-text[data-astro-cid-4hsbdvgl] p+p,.markdown-text[data-astro-cid-4hsbdvgl] p+ul,.markdown-text[data-astro-cid-4hsbdvgl] p+ol,.markdown-text[data-astro-cid-4hsbdvgl] ul+p,.markdown-text[data-astro-cid-4hsbdvgl] ol+p{margin-top:.45rem}.markdown-text[data-astro-cid-4hsbdvgl] a{color:var(--accent-strong)}.markdown-text[data-astro-cid-4hsbdvgl] strong{color:var(--text-main)}
+</style>
+<link rel="stylesheet" href="/_astro/agent-ready-scientific-instrument-cli-seed.NsxWPVtX.css"></head> <body> <div class="site-shell editorial-fallout"> <div class="contour-field" aria-hidden="true"> <svg class="contour-field__svg" viewBox="0 0 1440 960" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"> <g class="contour-field__island contour-field__island--northwest"> <path class="contour-field__stroke" d="M76 168C124 112 226 86 318 118c72 25 127 82 130 141 4 71-67 130-160 151-95 21-204-5-242-73-31-56-10-148 57-219Z"></path> <path class="contour-field__stroke" d="M122 172C162 132 237 118 306 142c54 18 95 58 98 102 4 53-48 97-116 113-69 16-149-3-178-54-24-42-9-108 42-161Z"></path> </g> <g class="contour-field__island contour-field__island--northeast"> <path class="contour-field__stroke" d="M980 112c67-44 164-50 235-12 65 34 112 106 90 171-23 69-113 115-210 120-95 5-191-27-227-94-36-66-8-145 53-185 17-11 38-22 59-30Z"></path> <path class="contour-field__stroke" d="M996 146c54-34 131-39 189-8 52 27 91 82 73 132-19 54-91 90-169 95-76 4-154-22-183-74-29-53-6-112 44-145 14-9 30-17 46-24Z"></path> </g> <g class="contour-field__island contour-field__island--southwest"> <path class="contour-field__stroke" d="M278 594c61-51 156-74 246-51 88 23 165 92 164 172-2 88-100 157-213 182-115 26-248 7-320-66-71-71-69-191 6-258 33-30 73-56 117-67Z"></path> <path class="contour-field__stroke" d="M320 616c49-40 124-58 194-40 69 18 129 72 128 134-2 68-79 121-166 141-90 20-193 5-249-51-55-56-53-149 5-201 26-23 58-44 88-53Z"></path> </g> <g class="contour-field__island contour-field__island--southeast"> <path class="contour-field__stroke" d="M1078 618c53-52 142-87 227-79 92 9 181 67 209 151 31 94-15 210-111 274-95 65-239 74-331 15-90-58-129-181-89-275 19-46 51-90 95-122Z"></path> <path class="contour-field__stroke" d="M1113 646c43-42 113-70 181-64 74 8 145 54 168 122 25 76-12 169-89 222-77 52-193 59-267 12-73-46-104-146-71-221 15-38 41-72 78-98Z"></path> </g> </svg> </div> <div class="contour-nodes" aria-hidden="true"></div> <div class="crt-overlay" aria-hidden="true"></div> <div class="crt-pixel-grid" aria-hidden="true"></div> <div class="crt-scanline" aria-hidden="true"></div> <header class="site-header"> <div class="site-kicker-row"> <p class="site-kicker">Quantum Physics x Agents x Instruments</p> <button type="button" class="theme-selector" data-theme-cycle-button data-allowed-themes="commonwealth,capital,mojave" data-default-theme="mojave" data-theme-storage-key="bb84-theme" aria-label="Cycle theme. Available themes: Commonwealth, Capital, Mojave. Current theme: Mojave.">
+Theme: <span>Mojave</span> </button> <script type="module">const c=["mojave","commonwealth","capital"];function m({themeKey:e,allowedThemes:r,defaultThemeKey:t}){return r.includes(e)?e:t}function u(e){return e.charAt(0).toUpperCase()+e.slice(1)}function o(e,r){const t=u(r);e.dataset.themeLabel=t,e.setAttribute?.("aria-label",`Cycle theme. Current theme: ${t}.`),typeof e.textContent=="string"&&(e.textContent=t)}function s({getStorage:e,themeStorageKey:r,allowedThemes:t,defaultThemeKey:n}){try{return m({themeKey:e?.()?.getItem(r),allowedThemes:t,defaultThemeKey:n})}catch{return n}}function d({getStorage:e,themeStorageKey:r,allowedThemes:t,themeKey:n}){if(!t.includes(n))return!1;try{return e?.()?.setItem(r,n),!0}catch{return!1}}function h(e,r,t){const n=s({getStorage:r,...t});return e.documentElement.dataset.theme=n,n}function i(e,r=c){const t=c.filter(l=>r.includes(l)),n=t.indexOf(e);return n===-1?t[0]??e:t[(n+1)%t.length]}function f(e,r,t){const n=e.querySelector("[data-theme-cycle-button]"),l=h(e,r,t);return n?.addEventListener?(o(n,l),n.addEventListener("click",()=>{const a=i(l===e.documentElement.dataset.theme?l:e.documentElement.dataset.theme,t.allowedThemes);e.documentElement.dataset.theme=a,o(n,a),d({getStorage:r,themeStorageKey:t.themeStorageKey,allowedThemes:t.allowedThemes,themeKey:a})}),n):null}for(const e of document.querySelectorAll("[data-theme-cycle-button]")){const r=(e.dataset.allowedThemes??"").split(",").filter(Boolean);f({documentElement:document.documentElement,querySelector(t){return t==="[data-theme-cycle-button]"?e:null}},()=>globalThis.localStorage,{allowedThemes:r,defaultThemeKey:e.dataset.defaultTheme??defaultThemeKey,themeStorageKey:e.dataset.themeStorageKey??themeStorageKey})}</script> </div> <div class="site-control-rail"> <nav class="site-nav" aria-label="Primary"> <a class="site-nav-tab" href="/" aria-current="page"> Home </a> <a class="site-nav-tab" href="/blogs/"> Blogs </a> <a class="site-nav-tab" href="/portfolios/"> Portfolios </a> </nav> </div> </header> <main class="site-main">  <div class="braille-banner" aria-hidden="true" data-astro-cid-pzrvnr36> <div class="braille-banner__content" data-astro-cid-pzrvnr36> <div class="braille-banner__sign" data-astro-cid-pzrvnr36> <div class="braille-banner__light" data-astro-cid-pzrvnr36> <pre class="terminal-art braille-banner__text" style="font-family: &#34;Cascadia Mono&#34;, &#34;DejaVu Sans Mono&#34;, &#34;Noto Sans Mono&#34;, &#34;SF Mono&#34;, &#34;Menlo&#34;, &#34;Consolas&#34;, monospace;" data-astro-cid-pzrvnr36>                                          ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                          
+                                      ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                      
+                                 ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                 
+                                                                                                    
+                         ⢀⣀⡀       ⣀⣤⣤                                                              
+           ⢀⣀⣤⣶⢾⣿⣿⠗ ⢀⣤⣦  ⢹⣿⠁     ⢠⣼⡟⣿⠏            ⣀⣀ ⣀⣄⡀⣀⣤⣤  ⣠⣴⠶⣷⡆                                  
+         ⣠⣾⡿⠛⠁⢠⣾⣿⠋ ⣰⣿⣿⠋ ⢠⣿⠇     ⣴⣿⢯⡾⠋⢀⣠⣤⣤⡀ ⣤⡶⢿⣦⡄ ⣼⣿⣯⢾⣿⣿⡿⣻⣿⠋⢀⣾⣿⠿⠟⣉⡴⠆ ⣀                               
+        ⢾⠟⠁  ⣠⣿⡿⠃ ⣴⣿⡿⠃ ⣠⡿⢃⣠⣶⢿⣿⠆⣶⣿⡿⠏⢀⣴⣿⠏⠐⠛⣠⣿⡿⠁⣹⡿⠶⣿⣿⠟⢡⣿⡿⠋⣼⣿⣧⠶⠛⣿⣷⡶⠾⠋ ⢀⣿⠟                               
+            ⣰⣿⡿⠃⢠⣾⣿⡿⠃⢀⣴⠟⢱⣿⣿⠵⠟⣁⣾⣿⡏⢁⣰⢿⣿⣏⣠⡴⠟⠻⣿⡷⠞⠋ ⠺⠿⠋ ⠛⠛  ⠉⠉⠁        ⠈     ⢀⣤⡾⢻⡇                       
+           ⢰⣿⣿⣥⡾⠏⣿⣿⣧⣴⠟⠁ ⠻⣿⣷⡶⠞⠋⠙⠿⠟⠋⠁ ⠉⠋⠁                                ⣰⣿⠟⣰⡟⠁ ⢀⣀  ⣠⣴⡆               
+           ⢸⣿⠿⠋⠁ ⠛⠛⠋⠁                  ⣰⣶⣿⣁⣀⣀⡀           ⢀⣀ ⢀⣠⡄ ⢀⣤⣴⣶⣤⢀⣼⣿⣫⡾⠋⢠⣴⡿⢛⣿⠇⢀⣿⢛⣿⣿⠇  ⢀⣤⠄        
+                                 ⢠⣴⣶⣶⣶⣾⣿⡿⠛⣛⣿⡉⠁   ⣠⣴⠾⣶⣿⠗ ⣰⣿⠟ ⣾⡿⢃⣴⣿⣯⡵⠟⣁⣾⣿⡟⠉⢀⣴⣿⣿⠷⠛⣡⡴⠛ ⣿⣿⣃⣀⣤⠾⠋⠁         
+                                    ⢀⣾⣿⠏ ⢀⣿⢻⣿⡿⠃⣠⣿⡿⢁⣰⣿⠟⣠⣾⣿⣟⣠⡾⠛⠛⠻⣿⣿⣥⣴⠾⠋⠿⣿⡶⠶⠋⠈⠻⠿⠿⠛⠁   ⠙⠛⠛⠉             
+                                    ⣾⣿⠇⢀⡴⠛⢠⣿⣟⣡⠾⣿⣿⡴⠟⠿⠿⠛⠉⠈⠛⠛⠋    ⠈⠉⠁                                  
+                                    ⠿⠿⠟⠋  ⠈⠛⠋⠁                                                      
+                                              ⢀                                                     
+                                                                                                    
+                                 ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                 
+                                      ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                      
+                                          ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒                                          </pre> <div class="braille-banner__atom-wrap" data-astro-cid-pzrvnr36> <div class="braille-banner__atom" style="font-family: &#34;Cascadia Mono&#34;, &#34;DejaVu Sans Mono&#34;, &#34;Noto Sans Mono&#34;, &#34;SF Mono&#34;, &#34;Menlo&#34;, &#34;Consolas&#34;, monospace;" data-astro-cid-pzrvnr36> <div class="braille-banner__orbit-layer braille-banner__orbit-layer--1" data-astro-cid-pzrvnr36> <span class="braille-banner__orbit-track" data-astro-cid-pzrvnr36></span> <span class="braille-banner__e" data-astro-cid-pzrvnr36>⠈</span> </div> <div class="braille-banner__orbit-layer braille-banner__orbit-layer--2" data-astro-cid-pzrvnr36> <span class="braille-banner__orbit-track" data-astro-cid-pzrvnr36></span> <span class="braille-banner__e" data-astro-cid-pzrvnr36>⠈</span> </div> <div class="braille-banner__orbit-layer braille-banner__orbit-layer--3" data-astro-cid-pzrvnr36> <span class="braille-banner__orbit-track" data-astro-cid-pzrvnr36></span> <span class="braille-banner__e" data-astro-cid-pzrvnr36>⠈</span> </div> <span class="braille-banner__nucleus" data-astro-cid-pzrvnr36> <span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.38); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.33); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.11 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.2); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.4); --n-z: 14px; --n-order: 14; --n-size: calc(var(--nucleus-size) * 0.12 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.43); --n-z: 15px; --n-order: 15; --n-size: calc(var(--nucleus-size) * 0.115 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.2); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.4); --n-z: 14px; --n-order: 14; --n-size: calc(var(--nucleus-size) * 0.12 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.38); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.33); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.11 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.44); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.15); --n-z: 11px; --n-order: 11; --n-size: calc(var(--nucleus-size) * 0.105 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.27); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.2); --n-z: 18px; --n-order: 18; --n-size: calc(var(--nucleus-size) * 0.13 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.08); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.22); --n-z: 23px; --n-order: 23; --n-size: calc(var(--nucleus-size) * 0.145 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.1); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.22); --n-z: 24px; --n-order: 24; --n-size: calc(var(--nucleus-size) * 0.148 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.29); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.19); --n-z: 19px; --n-order: 19; --n-size: calc(var(--nucleus-size) * 0.132 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.45); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.13); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.108 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.47); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.02); --n-z: 10px; --n-order: 10; --n-size: calc(var(--nucleus-size) * 0.1 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.31); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.02); --n-z: 20px; --n-order: 20; --n-size: calc(var(--nucleus-size) * 0.136 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.13); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.04); --n-z: 27px; --n-order: 27; --n-size: calc(var(--nucleus-size) * 0.155 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.05); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.03); --n-z: 29px; --n-order: 29; --n-size: calc(var(--nucleus-size) * 0.16 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.23); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.01); --n-z: 24px; --n-order: 24; --n-size: calc(var(--nucleus-size) * 0.148 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.41); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.03); --n-z: 17px; --n-order: 17; --n-size: calc(var(--nucleus-size) * 0.125 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.42); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.18); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.11 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.24); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.16); --n-z: 21px; --n-order: 21; --n-size: calc(var(--nucleus-size) * 0.138 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.06); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.15); --n-z: 28px; --n-order: 28; --n-size: calc(var(--nucleus-size) * 0.158 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.12); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.16); --n-z: 27px; --n-order: 27; --n-size: calc(var(--nucleus-size) * 0.155 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.3); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.17); --n-z: 20px; --n-order: 20; --n-size: calc(var(--nucleus-size) * 0.136 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.46); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.21); --n-z: 11px; --n-order: 11; --n-size: calc(var(--nucleus-size) * 0.105 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.35); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.33); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.11 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.17); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.39); --n-z: 14px; --n-order: 14; --n-size: calc(var(--nucleus-size) * 0.12 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.03); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.42); --n-z: 15px; --n-order: 15; --n-size: calc(var(--nucleus-size) * 0.115 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.22); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.38); --n-z: 14px; --n-order: 14; --n-size: calc(var(--nucleus-size) * 0.12 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.39); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.31); --n-z: 12px; --n-order: 12; --n-size: calc(var(--nucleus-size) * 0.11 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.12); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.31); --n-z: 17px; --n-order: 17; --n-size: calc(var(--nucleus-size) * 0.126 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.11); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.3); --n-z: 17px; --n-order: 17; --n-size: calc(var(--nucleus-size) * 0.126 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.23); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.31); --n-z: 16px; --n-order: 16; --n-size: calc(var(--nucleus-size) * 0.122 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--neutron" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.16); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0.32); --n-z: 16px; --n-order: 16; --n-size: calc(var(--nucleus-size) * 0.122 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span><span class="braille-banner__nucleon braille-banner__nucleon--proton" style="--n-x: calc(var(--nucleus-size) * var(--nucleus-pack) * -0.01); --n-y: calc(var(--nucleus-size) * var(--nucleus-pack) * 0); --n-z: 30px; --n-order: 30; --n-size: calc(var(--nucleus-size) * 0.16 * var(--nucleus-overlap));" data-astro-cid-pzrvnr36></span> </span> </div> </div> </div> </div> </div> </div>  <section class="home-hero-region" data-astro-cid-j7pv25f6> <section class="hero-panel theme-card ui-panel" data-astro-cid-27rxuilx> <pre class="terminal-art terminal-art--hero" aria-hidden="true" data-astro-cid-27rxuilx>·─────·─────·
+│     │     │
+│  ·──┼──·  │
+│  │  │  │  │
+·──┼──·──┼──·
+│  │  │  │  │
+│  ·──┼──·  │
+│     │     │
+·─────·─────·
+│     │     │
+│  ·──┼──·  │
+│  │  │  │  │
+·──┼──·──┼──·
+│  │  │  │  │
+│  ·──┼──·  │
+│     │     │
+·─────·─────·</pre> <p class="hero-panel__eyebrow panel-header-strip" data-astro-cid-27rxuilx>// Physicist, builder, architect</p> <div class="hero-panel__body" data-astro-cid-27rxuilx> <h1 data-astro-cid-27rxuilx>Siyu Cheng&#39;s Home Page</h1> <div class="hero-panel__summary status-block" data-astro-cid-27rxuilx> <span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl>I&#39;m an about-to-graduate PhD student in Physics at Boston College. </span> </div> <ul class="hero-panel__list status-block" aria-label="Introduction highlights" data-astro-cid-27rxuilx> <li data-astro-cid-27rxuilx><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl>I focus on one of today’s most fundamental challenges: <strong>applying AI-driven automation to real scientific research.</strong></span></li><li data-astro-cid-27rxuilx><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl>I design and build <strong>agentic systems for experimental quantum physics</strong>.</span></li><li data-astro-cid-27rxuilx><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl>My PhD research specializes in probing <strong>rare-earth strongly correlated quantum materials</strong> using <strong>scanning tunneling microscopy (STM) and cryogenic UHV systems.</strong></span></li> </ul> </div> <div class="hero-actions" data-astro-cid-27rxuilx> <a class="hero-actions__link clickable-shell-link ui-panel" href="/portfolios/" data-astro-cid-27rxuilx> My Portfolios </a><a class="hero-actions__link clickable-shell-link ui-panel" href="/blogs/" data-astro-cid-27rxuilx> My Blogs </a> </div> </section>  <aside class="status-panel theme-card ui-panel" aria-label="Research Interests" data-astro-cid-t62qjn3s> <p class="status-panel__eyebrow panel-header-strip" data-astro-cid-t62qjn3s>// My Missions</p> <h2 data-astro-cid-t62qjn3s>Research Interests</h2> <ul class="status-block status-panel__list" data-astro-cid-t62qjn3s> <li data-astro-cid-t62qjn3s><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl><strong>Agentic tooling</strong> for scientific instruments (Harness, Multi-agents Service, Benchmarking, agentic data synthesis)</span></li><li data-astro-cid-t62qjn3s><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl><strong>Exotic charge and spin orders discovery</strong> in novel quantum materials (rotational symmetry breaking, Frieze stripe, nematicity, altermagnetic spin texture, unconventional superconductivity)</span></li><li data-astro-cid-t62qjn3s><span class="markdown-text markdown-text--inline" data-astro-cid-4hsbdvgl><strong>AI-native experimental hardware</strong> design (multi-hardwares platform integration, agentic FPGA systems)</span></li> </ul> </aside>  </section> <section class="home-feature-grid" aria-label="Homepage feature groups" data-astro-cid-lnkohjql> <div class="home-feature-grid__section theme-card ui-panel" data-astro-cid-lnkohjql> <pre class="terminal-art terminal-art--panel" aria-hidden="true" data-astro-cid-lnkohjql>○───┬───○───┬───○
+    │       │
+○───┼───○───┼───○
+    │       │
+○───┴───○───┴───○</pre>  <header class="section-heading" data-astro-cid-ytvomcwp> <p data-astro-cid-ytvomcwp>// Portfolio</p> <h2 data-astro-cid-ytvomcwp>Currently working on...</h2> </header>  <div class="markdown-text home-feature-grid__summary status-block" data-astro-cid-4hsbdvgl><ul>
+<li>Agentic trajectory benchmark system for undeterministic and stochastic quantum physics experiments tasks. </li>
+<li>Agentic trajectory data synthesis pipeline. </li>
+<li>Effective agent harness for undeterministic and stochastic quantum physics experiments.</li>
+</ul>
+</div> <div class="home-feature-grid__cards" data-astro-cid-lnkohjql> <a class="featured-card theme-card ui-panel" href="/portfolios/scientific-instrument-agent-service/" data-astro-cid-rksxk3bj> <span class="featured-card__label panel-header-strip" data-astro-cid-rksxk3bj>Featured</span> <span class="featured-card__title" data-astro-cid-rksxk3bj>Scientific Instrument Agent Service</span> <div class="markdown-text featured-card__summary status-block" data-astro-cid-4hsbdvgl><p>Agent-facing orchestration for real scientific hardware and measurement workflows.</p>
+</div> </a>  </div> </div><div class="home-feature-grid__section theme-card ui-panel" data-astro-cid-lnkohjql>  <pre class="terminal-art terminal-art--panel" aria-hidden="true" data-astro-cid-lnkohjql>      .         .
+     / \       / \
+    /   \     /   \
+···/     \···/     \···
+          \ /       \ /
+           &#39;         &#39;</pre> <header class="section-heading" data-astro-cid-ytvomcwp> <p data-astro-cid-ytvomcwp>// Blogs</p> <h2 data-astro-cid-ytvomcwp>Recent Writing...</h2> </header>  <div class="markdown-text home-feature-grid__summary status-block" data-astro-cid-4hsbdvgl><h3>Dev thoughts, research notes, and self reflections.</h3>
+</div> <div class="home-feature-grid__cards" data-astro-cid-lnkohjql> <a class="featured-card theme-card ui-panel" href="/blogs/measured-not-predicted/" data-astro-cid-rksxk3bj> <span class="featured-card__label panel-header-strip" data-astro-cid-rksxk3bj>Featured</span> <span class="featured-card__title" data-astro-cid-rksxk3bj>Measured, Not Predicted</span> <div class="markdown-text featured-card__summary status-block" data-astro-cid-4hsbdvgl><p>A note on trusting instrument output over elegant simulation narratives.</p>
+</div> </a>  </div> </div> </section>   </main> <footer class="site-footer"> <div class="contact-strip"> <span class="contact-label"><span class="contact-atom" aria-hidden="true">⚛</span> Reach Out</span> <div class="contact-links"> <a href="mailto:hustphysicscheng@gmail.com" class="contact-link" title="hustphysicscheng@gmail.com"> <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="currentColor" stroke-width="1.5"></rect> <path d="M1.5 4.5 8 9l6.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span>hustphysicscheng@gmail.com</span> </a> <a href="mailto:chengsh@bc.edu" class="contact-link" title="chengsh@bc.edu"> <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="currentColor" stroke-width="1.5"></rect> <path d="M1.5 4.5 8 9l6.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span>chengsh@bc.edu</span> </a> <a href="https://www.linkedin.com/in/siyu-cheng-987212298/" class="contact-link" target="_blank" rel="noopener noreferrer" title="LinkedIn"> <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect x="1.5" y="1.5" width="13" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"></rect> <path d="M4.5 7v4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="4.5" cy="5" r="0.75" fill="currentColor"></circle> <path d="M8 11.5V9a2 2 0 0 1 4 0v2.5M8 9v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span>LinkedIn</span> </a> <a href="https://github.com/BB-84C" class="contact-link" target="_blank" rel="noopener noreferrer" title="GitHub"> <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M8 .5a7.5 7.5 0 0 0-2.37 14.61c.37.07.5-.16.5-.36v-1.27c-2.08.45-2.52-.97-2.52-.97-.34-.87-.83-1.1-.83-1.1-.68-.47.05-.46.05-.46.75.05 1.14.77 1.14.77.67 1.14 1.75.81 2.17.62.07-.48.26-.81.47-.99-1.66-.19-3.41-.83-3.41-3.7 0-.82.29-1.49.77-2.01-.08-.19-.33-.95.07-1.99 0 0 .63-.2 2.05.77a7.15 7.15 0 0 1 3.74 0c1.42-.97 2.05-.77 2.05-.77.4 1.04.15 1.8.07 1.99.48.52.77 1.19.77 2.01 0 2.88-1.75 3.51-3.42 3.7.27.23.51.69.51 1.39v2.06c0 .2.13.43.51.36A7.5 7.5 0 0 0 8 .5z"></path> </svg> <span>GitHub</span> </a> <a href="https://scholar.google.com/citations?user=Jkj80J8AAAAJ&hl=en" class="contact-link" target="_blank" rel="noopener noreferrer" title="Google Scholar"> <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M8 2 1.5 5.5 8 9l6.5-3.5L8 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path> <path d="M4.5 7.5v3.5S6 13.5 8 13.5s3.5-2.5 3.5-2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.5 5.5v3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="13.5" cy="9.5" r="0.75" fill="currentColor"></circle> </svg> <span>Scholar</span> </a> </div> </div> </footer> </div> </body></html> 
